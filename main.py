@@ -15,7 +15,7 @@ import os
 
 
 my_email = 'oulkarshubhu@gmail.com'
-password = 'jrzmzxnxklfberaa'
+password = os.environ.get('password')
 passcode_send = ''
 email = ''
 
