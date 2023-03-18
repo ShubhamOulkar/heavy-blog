@@ -1,0 +1,96 @@
+  body {
+    background-color: white
+  }
+
+  .d-flex {
+    padding-top: 0.75rem;
+    padding-left: 0.5rem;
+  }
+
+  .search-icons input {
+    height: 50px;
+    border: none
+  }
+
+  .search-icons input:focus {
+    box-shadow: none
+  }
+
+  .search-icons i {
+    position: absolute;
+    top: 17px;
+    right: 10px;
+    font-size: 19px;
+    z-index: 1000
+  }
+
+  .image {
+    position: relative;
+    border-radius: 50%;
+    border: 3px solid rgb(130, 184, 229);
+    padding: 5px;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+
+  .image img {
+    width: 60px;
+    height: 60px
+  }
+
+  .comment-text {
+    font-size: 13px
+  }
+
+  label.radio {
+    cursor: pointer
+  }
+
+  label.radio input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none
+  }
+
+  label.radio span {
+    padding: 5px 19px;
+    border: 2px solid rgb(130, 184, 229);
+    display: inline-block;
+    color: rgb(130, 184, 229);
+    border-radius: 3px;
+    font-size: 18px;
+    text-transform: uppercase
+  }
+
+  label.radio input:checked+span {
+    border-color: rgb(130, 184, 229);
+    background-color: rgb(130, 184, 229);
+    color: #fff
+  }
+
+  .commentarea textarea {
+    resize: none;
+    background-color: #eee;
+    border: none;
+    border: 2px solid #00000024;
+    transition: all 0.5s
+  }
+
+  .commentarea textarea:focus {
+    background-color: #eee;
+    box-shadow: none;
+    border: 2px solid rgb(130, 184, 229)
+  }
+
+  .button button {
+    height: 55px;
+    text-transform: uppercase;
+    background-color: rgb(130, 184, 229);
+    border-color: rgb(130, 184, 229)
+  }
+

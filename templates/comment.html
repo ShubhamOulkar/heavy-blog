@@ -1,0 +1,50 @@
+<div class="container">
+  <h3>Comments on post</h3>
+  <!-- <div class="row d-flex justify-content-center">
+    <div class="col-md-6"> -->
+  <!-- <div class="mt-5 mb-3 position-relative search-icons"> <input type="text" placeholder="Search comments..."
+          class="form-control"> <i class='position-absolute bx bx-search-alt'></i>
+      </div> -->
+  <div class="card p-3 border-0">
+    {% for comment in post.comments: %}
+    <div class="d-flex flex-row">
+      <div class="image"> <img src="/static/img/pen.jpg" class="rounded-circle"> </div>
+      <div class="d-flex flex-column w-100 ms-2">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4 class="mb-1">{{comment.comment_author.name}}</h4> <span class="ms-1"><h6>{{comment.comment_date | safe}}</h6></span>
+        </div>
+        <p class="comment-text">{{comment.text|safe}}</p>
+      </div>
+    </div>
+    {% endfor %}
+    <!-- <div class="d-flex justify-content-between align-items-center">
+          <label class="radio">
+            <input type="radio" name="files" value="zip" checked><span><i class="fa-solid fa-file-zipper"></i></span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="files" value="gif"><span><i class="fa-solid fa-file-pdf"></i></span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="files" value="zip"><span><i class="fa-solid fa-file-jpg"></i></span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="files" value="gif"> <span><i class='bx bxs-file-png'></i></span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="files" value="zip"> <span><i class='bx bxs-file-txt'></i></span>
+          </label>
+         </div> -->
+    {% if current_user.is_authenticated %}
+    <form name="sentMessage" id="contactForm" action="{{ url_for('show_post', post_id=post.id) }}" method="post" novalidate>
+    <div class="commentarea mt-3"> <textarea rows="5" class="form-control" name="comment"
+        placeholder="Write comment..."></textarea>
+    </div>
+    <div class="button mt-3"> <button type="submit" class="btn btn-primary w-100"
+        id="sendMessageButton">Comment</button> </div>
+    </form>
+    {% else %}
+    <div class="button mt-3"> <button type="submit" class="btn btn-primary w-100" id="sendMessageButton"
+        href="{{url_for('login')}}">Login for Comment</button> </div>
+    {% endif %}
+  </div>
+</div>

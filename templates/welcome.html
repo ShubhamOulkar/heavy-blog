@@ -1,0 +1,56 @@
+{% block content %}
+
+{% include "header.html" %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/welcome.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h3 class="subtitle">You are successfully logged in.</h3>
+                    <h4>You are able to Create, Edit and Delete your posts.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="mb-4">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7 " style="padding-left: 22%;">
+            <div class="my-5">
+                <a class="btn btn-primary text-uppercase" id="submitButton" type="submit"
+                    href="{{url_for('add_new_post')}}">Create New Post</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container-lg">
+        <table class="table table-striped table-hover">
+            <tbody>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Created date</th>
+                    <th>Updated date</th>
+                    <th>Delete post</th>
+                </tr>
+                {% for table in list_post %}
+                    {% if current_user.id == table.author_id %}
+                        <tr>
+                            <td><a href="{{url_for('show_post', post_id=table.id)}}">{{table.title}}</a></td>
+                            <td>{{table.author.name}}</td>
+                            <td>{{table.date}}</td>
+                            <td>{{table.updated_date}}</td>
+                            <td><a href="{{url_for('delete_post', post_id=table.id) }}"><img src="/static/img/trash-solid.svg" alt="Delete post" style="height: 1rem;width: 1rem;"></a></td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+
+
+{% include "footer.html" %}
+{% endblock %}

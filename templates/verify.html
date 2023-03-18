@@ -1,0 +1,42 @@
+{% block content %}
+{% include 'header.html' %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='img/pen.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Verify It's You!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto content">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <form name="sentMessage" id="contactForm" action="{{ url_for('forgetpass') }}" method="post" novalidate>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Verify account</label>
+                        <input type="text" class="form-control" name="passcode" placeholder="verification code" id="name" required
+                            data-validation-required-message="Please enter passcode">
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div><br>
+                <button type="submit" class="btn btn-primary" id="sendMessageButton">verify</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
+{% endblock %}
