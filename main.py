@@ -172,7 +172,7 @@ def forgetpass():
             random.shuffle(passcode_send)
             passcode_send = ''.join(passcode_send)
             flash("Verification code is send to your email.")
-            with smtplib.SMTP('smtp.gmail.com') as connections:
+            with smtplib.SMTP('smtp.gmail.com', port=587) as connections:
                 connections.starttls()
                 connections.login(user=my_email, password=password)
                 connections.sendmail(from_addr=my_email,
@@ -250,7 +250,7 @@ def contact():
     if request.method == "POST":
         data = request.form
         email= f'Subject: Mail from my web \n\nName: {data["name"]} \nemail: {data["email"]} \ncontact no.: {data["phone"]} \nMessage: {data["message"]}'
-        with smtplib.SMTP('smtp.gmail.com') as connections:
+        with smtplib.SMTP('smtp.gmail.com', port=587) as connections:
             connections.starttls()
             connections.login(user=my_email, password=password)
             connections.sendmail(from_addr=my_email,
@@ -315,4 +315,4 @@ def delete_post(post_id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
