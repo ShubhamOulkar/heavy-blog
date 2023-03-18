@@ -33,6 +33,7 @@
                     <th>Author</th>
                     <th>Created date</th>
                     <th>Updated date</th>
+                    <th>Edit Post</th>
                     <th>Delete post</th>
                 </tr>
                 {% for table in list_post %}
@@ -42,6 +43,7 @@
                             <td>{{table.author.name}}</td>
                             <td>{{table.date}}</td>
                             <td>{{table.updated_date}}</td>
+                            <td><a href="{{url_for('edit_post', post_id=table.id)}}">Edit</a></td>
                             <td><a href="{{url_for('delete_post', post_id=table.id) }}"><img src="/static/img/trash-solid.svg" alt="Delete post" style="height: 1rem;width: 1rem;"></a></td>
                         </tr>
                     {% endif %}

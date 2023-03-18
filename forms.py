@@ -17,7 +17,7 @@ class EditPostForm(FlaskForm):
     title = StringField("Blog Post Title", validators=[DataRequired()])
     subtitle = StringField("Subtitle", validators=[DataRequired()])
     img_url = StringField("Blog Image URL", validators=[DataRequired(), URL()])
-    updated_date = DateField('updated date', validators=[DataRequired()])
+    updated_date = DateField('updated date', validators=[DataRequired()], format="%B %d, %Y")
     body = CKEditorField("Blog Content", validators=[DataRequired()])
     submit = SubmitField("Submit Post")
 
