@@ -289,16 +289,14 @@ def edit_post(post_id):
         subtitle=post.subtitle,
         img_url=post.img_url,
         author=current_user,
-        body=post.body,
-        updated_date = date.today().strftime("%B %d, %Y")
-
+        body=post.body
     )
     if edit_form.validate_on_submit():
         post.title = edit_form.title.data
         post.subtitle = edit_form.subtitle.data
         post.img_url = edit_form.img_url.data
         post.body = edit_form.body.data
-        post.updated_date = edit_form.updated_date.data
+        post.updated_date = date.today().strftime("%B %d, %Y")
         db.session.commit()
         return redirect(url_for("show_post", post_id=post.id))
 
