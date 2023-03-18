@@ -1,31 +1,60 @@
 {% include "header.html" %}
 
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url({{ url_for('static', filename='img/about-bg.jpg')}})">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>About Me</h1>
-            <span class="subheading">This is what I do.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Content -->
+<!-- Page Header -->
+<header class="masthead" style="background-image: url({{ url_for('static', filename='img/about-bg.jpg')}})">
+  <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
+        <div class="page-heading">
+          <h1>About Me</h1>
+          <span class="subheading">This is what I do.</span>
+        </div>
       </div>
     </div>
   </div>
+</header>
 
-  <hr>
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <img src="/static/img/main_author.png" alt="shubham profile picture"></td>
 
-  {% include "footer.html" %}
+      <h1 id="myname">Shubham Oulkar</h1>
+      <p><i><strong>ML, AI Engineer</strong></i></p>
+      <p>I completed bachelors degree in <strong>Electronics and Telecommunication</strong> and I am professional
+        engineer.
+        I had 1 year experience in <strong>ML and AI</strong>. My 1st love was <strong>Assembly c and
+          Verilog</strong> designing but later I fall in love with <strong>Python</strong>.
+        Then <i>I just realized that falling in 💖love with coding languages is easy for me. And this is my
+          💪strength.</i></p>
+
+      <h3>Coding Skills :</h3>
+      <table cellspacing="20">
+        <tr>
+          <td>C++</td>
+          <td>⭐⭐⭐⭐⭐</td>
+          <td>Python</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td>⭐⭐⭐⭐</td>
+          <td>java</td>
+          <td>⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>HTML</td>
+          <td>⭐⭐⭐⭐⭐</td>
+          <td>CSS</td>
+          <td>⭐⭐⭐⭐</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+{% include "footer.html" %}

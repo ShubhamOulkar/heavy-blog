@@ -290,7 +290,7 @@ def edit_post(post_id):
         img_url=post.img_url,
         author=current_user,
         body=post.body,
-        updated_date = post.updated_date
+        updated_date = date.today().strftime("%B %d, %Y")
 
     )
     if edit_form.validate_on_submit():
