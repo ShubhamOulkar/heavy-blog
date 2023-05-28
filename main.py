@@ -28,7 +28,7 @@ Bootstrap(app)
 
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')   # 'sqlite:///blogs.db'    
+app.config['SQLALCHEMY_DATABASE_URI'] =  os.environ.get('DATABASE_URL')   # 'sqlite:///blogs.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 login_manager = LoginManager()
