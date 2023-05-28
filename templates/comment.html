@@ -36,8 +36,10 @@
          </div> -->
     {% if current_user.is_authenticated %}
     <form name="sentMessage" id="contactForm" action="{{ url_for('show_post', post_id=post.id) }}" method="post" novalidate>
-    <div class="commentarea mt-3"> <textarea rows="5" class="form-control" name="comment"
-        placeholder="Write comment..."></textarea>
+    <div class="commentarea mt-3"> 
+      <textarea rows="5" class="form-control" name="comment"
+        placeholder="Write comment...">
+      </textarea>
     </div>
     <div class="button mt-3"> <button type="submit" class="btn btn-primary w-100"
         id="sendMessageButton">Comment</button> </div>

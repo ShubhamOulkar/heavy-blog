@@ -28,7 +28,7 @@ Bootstrap(app)
 
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL') 
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')   # 'sqlite:///blogs.db'    
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 login_manager = LoginManager()
@@ -214,6 +214,10 @@ def resetpassword(verified):
     return render_template('resetpassword.html') 
     
 
+@app.route("/projects")
+def projects():
+    return render_template("projects.html", year=year)
+
 
 @app.route('/logout')
 def logout():
@@ -313,4 +317,5 @@ def delete_post(post_id):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
+
